@@ -70,18 +70,69 @@ async function deleteSiret(req, res, next) {
  */
 async function addSiret(req, res, next) {
     try {
+
         // Extract parameters from request body
         const {
-            siren, nic, siret, enseigne1Etablissement, statutDiffusionEtablissement, dateCreationEtablissement, trancheEffectifsEtablissement, anneeEffectifsEtablissement, activitePrincipaleRegistreMetiersEtablissement, dateDernierTraitementEtablissement, etablissementSiege, nombrePeriodesEtablissement, complementAdresseEtablissement, numeroVoieEtablissement, indiceRepetitionEtablissement, typeVoieEtablissement, libelleVoieEtablissement, codePostalEtablissement, libelleCommuneEtablissement, libelleCommuneEtrangerEtablissement, distributionSpecialeEtablissement, codeCommuneEtablissement, codeCedexEtablissement, libelleCedexEtablissement, codePaysEtrangerEtablissement, libellePaysEtrangerEtablissement, complementAdresse2Etablissement, numeroVoie2Etablissement, indiceRepetition2Etablissement, typeVoie2Etablissement, libelleVoie2Etablissement, codePostal2Etablissement, libelleCommune2Etablissement, libelleCommuneEtranger2Etablissement, distributionSpeciale2Etablissement, codeCommune2Etablissement, codeCedex2Etablissement, libelleCedex2Etablissement, codePaysEtranger2Etablissement, libellePaysEtranger2Etablissement, dateDebut, etatAdministratifEtablissement, enseigne2Etablissement, enseigne3Etablissement, denominationUsuelleEtablissement, activitePrincipaleEtablissement, nomenclatureActivitePrincipaleEtablissement, caractereEmployeurEtablissement
+            siret,
+            enseigne1Etablissement,
+            siren = null,
+            nic = null,
+            statutDiffusionEtablissement = null,
+            dateCreationEtablissement = null,
+            trancheEffectifsEtablissement = null,
+            anneeEffectifsEtablissement = null,
+            activitePrincipaleRegistreMetiersEtablissement = null,
+            dateDernierTraitementEtablissement = null,
+            etablissementSiege = null,
+            nombrePeriodesEtablissement = null,
+            complementAdresseEtablissement = null,
+            numeroVoieEtablissement = null,
+            indiceRepetitionEtablissement = null,
+            typeVoieEtablissement = null,
+            libelleVoieEtablissement = null,
+            codePostalEtablissement = null,
+            libelleCommuneEtablissement = null,
+            libelleCommuneEtrangerEtablissement = null,
+            distributionSpecialeEtablissement = null,
+            codeCommuneEtablissement = null,
+            codeCedexEtablissement = null,
+            libelleCedexEtablissement = null,
+            codePaysEtrangerEtablissement = null,
+            libellePaysEtrangerEtablissement = null,
+            complementAdresse2Etablissement = null,
+            numeroVoie2Etablissement = null,
+            indiceRepetition2Etablissement = null,
+            typeVoie2Etablissement = null,
+            libelleVoie2Etablissement = null,
+            codePostal2Etablissement = null,
+            libelleCommune2Etablissement = null,
+            libelleCommuneEtranger2Etablissement = null,
+            distributionSpeciale2Etablissement = null,
+            codeCommune2Etablissement = null,
+            codeCedex2Etablissement = null,
+            libelleCedex2Etablissement = null,
+            codePaysEtranger2Etablissement = null,
+            libellePaysEtranger2Etablissement = null,
+            dateDebut = null,
+            etatAdministratifEtablissement = null,
+            enseigne2Etablissement = null,
+            enseigne3Etablissement = null,
+            denominationUsuelleEtablissement = null,
+            activitePrincipaleEtablissement = null,
+            nomenclatureActivitePrincipaleEtablissement = null,
+            caractereEmployeurEtablissement = null
         } = req.body;
+
+        // Check if mandatory fields are provided
+        if (!siret || !enseigne1Etablissement) {
+            return res.status(400).send('SIRET and enseigne1Etablissement are required');
+        }
 
         // Log action in the file
         logger.logAction(`ADD request for SIRET: ${siret}`);
 
         // Add the SIRET to the database
-        const result = await siretModel.addRow(
-            siren, nic, siret, enseigne1Etablissement, statutDiffusionEtablissement, dateCreationEtablissement, trancheEffectifsEtablissement, anneeEffectifsEtablissement, activitePrincipaleRegistreMetiersEtablissement, dateDernierTraitementEtablissement, etablissementSiege, nombrePeriodesEtablissement, complementAdresseEtablissement, numeroVoieEtablissement, indiceRepetitionEtablissement, typeVoieEtablissement, libelleVoieEtablissement, codePostalEtablissement, libelleCommuneEtablissement, libelleCommuneEtrangerEtablissement, distributionSpecialeEtablissement, codeCommuneEtablissement, codeCedexEtablissement, libelleCedexEtablissement, codePaysEtrangerEtablissement, libellePaysEtrangerEtablissement, complementAdresse2Etablissement, numeroVoie2Etablissement, indiceRepetition2Etablissement, typeVoie2Etablissement, libelleVoie2Etablissement, codePostal2Etablissement, libelleCommune2Etablissement, libelleCommuneEtranger2Etablissement, distributionSpeciale2Etablissement, codeCommune2Etablissement, codeCedex2Etablissement, libelleCedex2Etablissement, codePaysEtranger2Etablissement, libellePaysEtranger2Etablissement, dateDebut, etatAdministratifEtablissement, enseigne2Etablissement, enseigne3Etablissement, denominationUsuelleEtablissement, activitePrincipaleEtablissement, nomenclatureActivitePrincipaleEtablissement, caractereEmployeurEtablissement
-        );
+        const result = await siretModel.addRow(siren,nic,siret,statutDiffusionEtablissement,dateCreationEtablissement,trancheEffectifsEtablissement,anneeEffectifsEtablissement,activitePrincipaleRegistreMetiersEtablissement,dateDernierTraitementEtablissement,etablissementSiege,nombrePeriodesEtablissement,complementAdresseEtablissement,numeroVoieEtablissement,indiceRepetitionEtablissement,typeVoieEtablissement,libelleVoieEtablissement,codePostalEtablissement,libelleCommuneEtablissement,libelleCommuneEtrangerEtablissement,distributionSpecialeEtablissement,codeCommuneEtablissement,codeCedexEtablissement,libelleCedexEtablissement,codePaysEtrangerEtablissement,libellePaysEtrangerEtablissement,complementAdresse2Etablissement,numeroVoie2Etablissement,indiceRepetition2Etablissement,typeVoie2Etablissement,libelleVoie2Etablissement,codePostal2Etablissement,libelleCommune2Etablissement,libelleCommuneEtranger2Etablissement,distributionSpeciale2Etablissement,codeCommune2Etablissement,codeCedex2Etablissement,libelleCedex2Etablissement,codePaysEtranger2Etablissement,libellePaysEtranger2Etablissement,dateDebut,etatAdministratifEtablissement,enseigne1Etablissement,enseigne2Etablissement,enseigne3Etablissement,denominationUsuelleEtablissement,activitePrincipaleEtablissement,nomenclatureActivitePrincipaleEtablissement,caractereEmployeurEtablissement);
 
         // Send a success message
         if (result.rowCount > 0) {
@@ -93,6 +144,7 @@ async function addSiret(req, res, next) {
         next(err);
     }
 }
+
 
 module.exports = {
     getSiret,
