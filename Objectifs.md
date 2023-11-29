@@ -12,8 +12,6 @@
 > Bonus
 - 🟥 Permettre à l'app de modifier les données (insérer et ajouter) en REST syntax
 - 🟥 Ajouter un packaging automatique avec un outil Devops (Travis Cl par exemple)
-- 🟥 Créer une interface graphique pour l'app
-
 
 
 
