@@ -44,4 +44,7 @@ router.get('/:siret', siretController.getSiret);
  */
 router.delete('/:siret', siretController.deleteSiret);
 
+
+router.post('/', siretController.addSiret);
+
 module.exports = router;
