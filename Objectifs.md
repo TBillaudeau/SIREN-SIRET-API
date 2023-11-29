@@ -13,3 +13,17 @@
 - 🟥 Permettre à l'app de modifier les données (insérer et ajouter) en REST syntax
 - 🟥 Ajouter un packaging automatique avec un outil Devops (Travis Cl par exemple)
 - 🟥 Créer une interface graphique pour l'app
+
+
+
+
+Idée pour optimiser les requetes : 
+
+
+-- Création d'un index sur la colonne "siret" pour optimisation
+CREATE INDEX idx_siret ON dataset_first_version(siret);
+
+-- Requête optimisée en sélectionnant des colonnes spécifiques
+SELECT col1, col2, col3  -- Remplacez col1, col2, col3 par les noms réels des colonnes nécessaires
+FROM dataset_first_version
+WHERE siret = $1;
