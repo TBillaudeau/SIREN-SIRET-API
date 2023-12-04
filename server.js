@@ -8,6 +8,7 @@ const port = 3000;
 
 const options = {
     definition: {
+      openapi: '3.0.0',
       info: {
         title: 'SIRET API',
         version: '1.0.0',
@@ -24,3 +25,5 @@ app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerJsdoc(options)));
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+module.exports = app;
