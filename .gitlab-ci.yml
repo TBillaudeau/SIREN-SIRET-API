@@ -1,0 +1,14 @@
+stages:
+  - test
+
+before_script:
+  - npm install
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - npm test
+  only:
+    - master
+    - merge_request
