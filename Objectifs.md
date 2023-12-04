@@ -7,7 +7,7 @@
     - 🟩 GET query sur le SIRET : Renvoi la ligne avec ce SIRET sous format JSON
     - 🟩 DELETE query sur le SIRET : Supprime ce SIRET dans la BDD
     - 🟩 Log les actions dans un fichier
-- 🟥 Faire le rapport avec toute la documentation ENGLISH PLEASE
+- 🟧 Faire le rapport avec toute la documentation ENGLISH PLEASE
 
 > Bonus
 - 🟥 Permettre à l'app de modifier les données (insérer et ajouter) en REST syntax
