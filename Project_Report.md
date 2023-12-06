@@ -47,9 +47,6 @@ To generate some clean and usefull doc for the API we used **Swagger**
 Swagger interface for documentation
 ![image](swagger_interface.png)
 
-Example of response when trying requests
-![image2](swagger_response.png)
-
 For our workflow and code storage we used **Github**
 > We don't have a lot to say there, but are really used to work with Github as it is a great way to keep track on all our projects, and also being able to revert changes on our code.
 
