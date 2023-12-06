@@ -135,6 +135,8 @@ async function updateSiret(req, res, next) {
     }
 }
 
+
+// Export functions
 module.exports = {
     getSiret,
     deleteSiret,

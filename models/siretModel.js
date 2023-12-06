@@ -77,6 +77,7 @@ async function updateSiret(siren, nic, siret, statutdiffusionetablissement, date
     return result;
 }
 
+// Export the functions
 module.exports = {
     getSiret,
     deleteSiret,
