@@ -45,7 +45,7 @@ To generate some clean and usefull doc for the API we used **Swagger**
 > Swagger is an open-source framework for designing, building, and documenting RESTful APIs. We decided to use this because Thomas already knew about it and we saw there a great way to generate clean doc for our API
 
 Swagger interface for documentation
-![image](swagger_interface.png)
+![swagger_interface.png](https://raw.githubusercontent.com/TBillaudeau/SIREN-SIRET-API/master/swagger_interface.png)
 
 For our workflow and code storage we used **Github**
 > We don't have a lot to say there, but are really used to work with Github as it is a great way to keep track on all our projects, and also being able to revert changes on our code.
