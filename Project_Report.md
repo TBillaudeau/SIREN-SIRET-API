@@ -57,6 +57,8 @@ For our workflow and code storage we used **Github**
 
 2. We also used ***Copilot*** to help us write the code for the functions to add/modify the data in the database. We did that because as the dataset has a lot of columns, it was very dull to do.
 
+	We also used Copilot to get hints the structure of the unit tests for our API endpoints. However, we made modifications to these tests to ensure they fit our specific workflow and requirements.
+
 
 ## How did we do ?
 
@@ -150,6 +152,8 @@ Our API is working as follows:
 `/routes/siretRoutes.js`: This file defines the routes for the API that relate to SIRET operations. It imports the controller functions and binds them to specific HTTP methods and paths.
 
 `/utils/logger.js`: This file generates logs into the `log.txt` file.
+
+`/tests/siret.test.js`: This file contains unit tests for the API endpoints.
 
 We used an `.env` file to store our private database informations to connect to it.
 
