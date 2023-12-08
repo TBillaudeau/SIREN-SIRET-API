@@ -288,6 +288,21 @@ Here is a list of blogs we used to help us during this project.
 - [How to use Thunder Client, an alternative to Postman](https://www.codingninjas.com/studio/library/thunder-client---a-solution-for-postman-in-vs-code)
 - [How to create supertest](https://www.npmjs.com/package/supertest)
 
+---
+Sur l'ensembles de fonctionnalités demandés voici notre résultat final:
+
+**MVP**
+- ✅ Get the Data from Teams
+- ✅ Load the Data in a Database (PostGreSQL, MongoDB, Elastic, …)
+- ✅ Create an API:
+	- ✅ Using REST Protocol
+	- ✅ For a GET query on SIRET number, sends the line with this SIRET number in a JSON response
+	- ✅ For a DELETE query on SIRET number, deletes the SIRET Number in the database
+	- ✅ Log the actions in a file
+
+**Bonus**
+- ✅ Bonus: Make the application capable of modify the Data (Insert and Update data) (using REST syntax)
+- 🟧 Bonus: Add automatic packaging using Devops Tool (Travis CI for example)
 
 ---
 > A project made with a lot of ❤️ by **ARBEY** Louis, **BILLAUDEAU** Thomas and **CRETINON** Pierre-Louis
