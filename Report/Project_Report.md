@@ -72,7 +72,7 @@ CREATE TABLE siret_dataset (
 	activitePrincipaleRegistreMetiersEtablissement VARCHAR(255),
 	dateDernierTraitementEtablissement VARCHAR(255),
 	etablissementSiege VARCHAR(255),
-	nombrePeriodesEtablissement INTEGER,
+	nombrePeriodesEtablissement VARCHAR(255),
 	complementAdresseEtablissement VARCHAR(255),
 	numeroVoieEtablissement VARCHAR(255),
 	indiceRepetitionEtablissement VARCHAR(255),
@@ -124,7 +124,7 @@ COPY siret_dataset FROM [CSV File Url] WITH (FORMAT csv, HEADER);
 
 With this method, the time for the API to respond was very long (10-12 seconds). In order to accelerate it, we created an **index** on the siret column. The command in order to do it is the following : 
 ```SQL
-CREATE INDEX idx_siret ON dataset_first_version(siret)
+CREATE INDEX idx_siret ON siret_dataset(siret)
 ```
 
 Now, the response time is very quick (Less than 2 seconds !)
